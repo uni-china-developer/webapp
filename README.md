@@ -76,7 +76,7 @@ JS - /js/procurement/pork/purchase.js
 
 URL - /app/dept/procurement/purchase
 
-Database Table 
+### Database Table 
 
 * [procurement].[dbo].[PorkPurchaseInfo] - Main record table
 * [procurement].[dbo].[shop_fp] - Location FP Code mapping table
@@ -84,6 +84,8 @@ Database Table
 * [inventory_app].[dbo].[delivery_timing] - Delivery time code
 * [inventory_app].[dbo].[supplier] - Supplier menu
 * [inventory_app].[dbo].[location_type] - Shop Code menu & default BU
+
+### Sample 
 
 Get record
 
@@ -107,10 +109,31 @@ Query Parameter : loadDate
 get ("/app/dept/procurement/record/csv", getRecordCSV(), new JsonTransformer());
 ```
 
+## Procurement 超市屠宰數輸入
 
+JS Library - datatable, jquery, bootstrap
 
+JS - /js/procurement/pork/freshpork.js
 
+URL - /app/dept/procurement/fp
 
+### Database Table 
 
+* [inventory_app].[dbo].[pork_inventory] - Stock inventory
+* [procurement].[dbo].[PnsPorkPurchase] - for pns 
+* [procurement].[dbo].[BGPorkPurchase] - for wc
+
+### Related Stored Procedures
+
+* [procurement].[dbo].[cal_bg_pork_inventory] - wc (億高)
+* [procurement].[dbo].[cal_ed_pork_inventory] - pns mainland pork (建華企業)
+
+### Sample
+
+calculate 建華企業 purchase date from 2018/05/01 to now
+
+```
+exec [procurement].[dbo].[cal_ed_pork_inventory] '2018-05-01'
+```
 
 

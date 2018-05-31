@@ -136,4 +136,119 @@ calculate 建華企業 purchase date from 2018/05/01 to now
 exec [procurement].[dbo].[cal_ed_pork_inventory] '2018-05-01'
 ```
 
+## Procurement 發票匯入調整
+
+See WebAPI [Doc](#)
+
+## Reporting
+
+### Excel based
+
+* 豬數查詢 - /app/dept/procurement/pcheck
+* 建企億高豬數 (採購) - /app/dept/procurement/purchasecheck
+
+### Reporting service
+
+Reference file - /resources/views/procurement/include/coreuiheader.ftl
+
+## Finance Bank Reconciliation
+
+Controller - FinancePageController.java
+
+### Database Table 
+
+* [finance].[dbo].[ChequeBook] - Cheque book menu
+* [finance].[dbo].[Bank] - Bank account menu
+* [finance].[dbo].[APTransaction] - payable cheque record
+* [finance].[dbo].[APPaymentType] - payable type
+* [finance].[dbo].[ARTransaction] - receive record
+* [finance].[dbo].[ARPaymentType] - receive type
+* [finance].[dbo].[BankRecPrivilege] - privilege for open new cheque book
+
+## Finance Cheque Register / Autopay
+
+URL - /app/dept/finance/chequereg
+
+URL - /app/dept/finance/autopay
+
+JS - /js/finance/chequereg.js
+
+JS - /js/finance/autopay.js
+
+import file template - /template/chequetemp.xlsx
+
+### API Sample
+
+Get Cheque by Bank account
+Query Parameter : bankPK
+
+```
+get("/app/dept/finance/bank/cheque/get",getAllChequeByBank(), new JsonTransformer());
+```
+
+Get Cheque book list
+Parameter : bankCode
+
+```
+get("/app/dept/finance/bank/cheque/book/get/:bankCode", getChequeBookByBank(), new JsonTransformer());
+```
+
+Update cheque status
+
+```
+post("/app/dept/finance/bank/cheque/update/status", updateChequeStatus(), new JsonTransformer());
+```
+
+Import Cheque
+
+Parameter : ArrayList<ChequeData>
+
+```
+post("/app/dept/finance/bank/cheque/update/import", importCheque(), new JsonTransformer());
+```
+
+## Finance Unpresented Cheque
+
+URL - /app/dept/finance/ap
+
+JS - /js/finance/ap.js
+
+### API Sample
+
+Get all unpresented cheque
+
+```
+get("/app/dept/finance/bank/cheque/get/u", getUnpresentedChequeByBank(), new JsonTransformer());
+```
+
+## Finance AR Transaction
+
+URL - /app/dept/finance/ar
+
+JS - /js/finance/ar.js
+
+### API Sample
+
+Get Deposit record by bank
+
+Query Parameter : bankPK
+
+```
+get("/app/dept/finance/bank/ar/get/u",getUnPaidARTransactionByBank(), new JsonTransformer());
+```
+
+Update status
+
+```
+post("/app/dept/finance/bank/ar/update/status", updateARStatus(), new JsonTransformer());
+```
+
+
+
+
+
+
+
+
+
 

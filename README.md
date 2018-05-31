@@ -140,7 +140,7 @@ exec [procurement].[dbo].[cal_ed_pork_inventory] '2018-05-01'
 
 See WebAPI [Doc](#)
 
-## Reporting
+## Procurement Reporting
 
 ### Excel based
 
@@ -242,6 +242,81 @@ Update status
 ```
 post("/app/dept/finance/bank/ar/update/status", updateARStatus(), new JsonTransformer());
 ```
+
+## Finance MYOB export (Sales) & Sales adjustment 
+
+Parameter : company 
+
+* wellother (wc 億高)
+* crother (cr 華潤)
+* psother (pns 百佳)
+* pscother (pns c 百佳 欄豬)
+* pschi (pns cp 盈駿 小包豬)
+* ygother (yg 金年升)
+* arother (ar 全升)
+
+```
+get("/app/dept/finance/sale/get/export/:company", getExport(), new JsonTransformer());
+```
+
+### Database Table 
+
+Adjustment Table
+
+* [finance].[dbo].[adj_well_acc] - wc sales adjustment table 
+* [finance].[dbo].[adj_wcr_acc] - cr sales adjustment table
+* [finance].[dbo].[adj_ps_acc] - pns sales adjustment table
+* [finance].[dbo].[adj_yg_acc] - yg & ar sales adjustment table
+
+Source Table (data import from external storage)
+
+* [WellcomeSales].[dbo].[WellcomeSales] - wc & cr sales table
+* [ParknSale].[dbo].[PnSSales] - pns sales table
+* [YGSale].[dbo].[POSEodPay] - yg sales table (pos)
+* [YGSale].[dbo].[YGSales] - yg / ar sales (non-pos)
+
+### Related Stored Procedures
+
+Sync WC & CR Data to SQL Server (delete insert)
+
+```
+exec [WellcomeSales].[dbo].[udsp_replicate_data_mysql]
+```
+
+Sync WC data to adjustment table (delete insert)
+
+```
+exec [finance].[dbo].[auto_update_wc_sales]
+```
+
+Sync CR data to adjustment table (delete insert)
+
+```
+exec [finance].[dbo].[auto_update_cr_sales]
+```
+
+Sync YG data to adjustment table (delete insert)
+
+```
+exec [finance].[dbo].[auto_update_yg_sales]
+```
+
+update YG sales to adjustment table (update only)
+
+```
+exec [finance].[dbo].[auto_sync_sys_ygsales]
+```
+
+### MYOB Parameter
+
+* [finance].[dbo].[adj_item] - YG (account code e.g. 41000)
+* [finance].[dbo].[adj_ps_item] - PNS (cust id & item no)
+* [finance].[dbo].[adj_wcr_item] - WC (item no)
+* [finance].[dbo].[adj_well_item] - CR (item no)
+
+### Special
+
+* [finance].[dbo].[adj_ps_recate] - When Export MYOB CSV, (BD) bu sales will be grouped to (D) bu sales 
 
 
 

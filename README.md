@@ -318,6 +318,59 @@ exec [finance].[dbo].[auto_sync_sys_ygsales]
 
 * [finance].[dbo].[adj_ps_recate] - When Export MYOB CSV, (BD) bu sales will be grouped to (D) bu sales 
 
+## Guide - How to add new shop
+
+### PNS
+
+1. Login to [cloudapp](http://web.uni-china.com.hk:8000/)
+
+2. 設定 -> 進階
+
+3. Select BU (top right hand corner)
+
+4. click 新增 button
+
+5. input shop detail
+
+6. 確定 ->  complete
+
+### WC & CR
+
+1. Login to 192.168.11.244 (MySql Database)
+
+2. insert / update shop data to following table
+
+* pigtest.store - shop master
+* pigtest.storeorderlimit - shop order menu list
+* pigtest.saleslimit - shop sales bu list
+
+3. Login to 192.168.11.245 (SQL Server Database)
+
+4. insert / update shop data to following table
+
+* [WellcomeSales].[dbo].[WellcomeStore] - Shop detail
+* [WellcomeSales].[dbo].[WCRShop] - Shop Alias
+* [WellcomeSales].[dbo].[wc_shop_discount_group] - Discount group
+* [finance].[dbo].[wc_commission_ratio] - Commission
+
+### YG
+
+1. Login to 192.168.11.226 (SQL Server)
+
+2. insert / update shop data to following table
+
+* [YGSale].[dbo].[Outlet] - Shop Code / Name base info
+* [YGSale].[dbo].[Terminal] - POS Terminal
+* [YGSale].[dbo].[Octopus] - POS Octopus device mapping table
+
+3. Login to 192.168.11.245 (SQL Server)
+
+4. insert / update shop data to following table
+
+* [procurement].[dbo].[shop_fp] - Location FP Code mapping table
+* [inventory_app].[dbo].[location_type] - Shop Code menu & default BU
+
+
 
 
 

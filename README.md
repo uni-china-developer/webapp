@@ -138,7 +138,7 @@ exec [procurement].[dbo].[cal_ed_pork_inventory] '2018-05-01'
 
 ## Procurement 發票匯入調整
 
-See WebAPI [Doc](#)
+See WebAPI [Doc](https://github.com/uni-china-developer/webapp/tree/master/webapi#%E7%99%BC%E7%A5%A8%E5%8C%AF%E5%85%A5%E8%AA%BF%E6%95%B4)
 
 ## Procurement Reporting
 

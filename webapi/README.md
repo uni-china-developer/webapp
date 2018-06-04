@@ -19,11 +19,9 @@ svn checkout : file://192.168.11.205/f$/UC Development/Program Source/WebApp/Web
 * [JavaMail](https://mvnrepository.com/artifact/javax.mail/mail/1.4) - JavaMail is a Java API used to send and receive email via SMTP, POP3 and IMAP
 * [cloud-vision](https://cloud.google.com/vision/) - Derive insight from images with our powerful Cloud Vision API
 
-## Project
+## 發票匯入調整
 
-### 發票匯入調整
-
-[live](http://192.168.11.244:8080/pur/)
+URL: [live](http://192.168.11.244:8080/pur/)
 
 PHP files : \\192.168.11.244\wamp64\www\pur
 
@@ -31,4 +29,20 @@ Header : \\192.168.11.244\wamp64\www\css3.php
 
 CSS & JS : \\192.168.11.244\wamp64\www\static
 
+### Use Cases
 
+* 匯入電郵PDF 
+
+ImageRecordApi.java
+
+```
+get( "/check/mail",        checkMail(), new JsonTransformer()); // check mail file
+```
+
+* 匯入至採購入庫
+
+ImageRecordApi.java
+
+```
+post( "/export" ,           export(), new JsonTransformer()); // export data to purchase interface
+```

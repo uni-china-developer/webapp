@@ -15,6 +15,5 @@ svn checkout : file://192.168.11.205/f$/UC Development/Program Source/purchase
 * LocalPorkOrder - deprecated
 * FreshPorkOrder - deprecated
 * PackPorkCategory - deprecated
-* YGPorkWeight - Pork weight excel (Updated by Operation) may conflict with Joe.T Data
+* YGPorkWeight - Pork weight excel (Updated by operation) may conflict with Joe.T Data
 * ProcurementPorkTransaction - Pork Purchase Record (without weight data, for reference only)
-

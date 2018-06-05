@@ -11,22 +11,20 @@
 * [Cloud Interface](http://web.uni-china.com.hk:8000/)
 * [WC PHP](http://192.168.11.244:8080/)
 
-##### Web Service
-
-WebAPI 
+##### WebAPI 
 
 * Main purpose is proxy (Cloud <--VPN--> API <-> DataBase)
 * Email service
 
-SP Update
+##### SP Update
 
-WC Mysql -> hklerpdb 
+* WC Mysql -> hklerpdb 
 
 ```
 exec WellcomeSales.dbo.udsp_replicate_data_mysql
 ``` 
 
-YG Mysql -> bildb1
+* YG Mysql -> bildb1
 
 ```
 exec YGSale.dbo.update_eodpay -- dayend

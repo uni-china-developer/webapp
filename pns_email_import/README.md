@@ -13,7 +13,7 @@ svn checkout : file://192.168.11.205/f$/UC Development/Program Source/EmailSales
 
 ## Flow
 
-![Chart](https://holland.pk/uptow/i4/869f1f16af308a95bf2267010764420b.png)
+![Chart](https://holland.pk/uptow/i4/bf9133c60a9632da68d8a5f2c9bbe741.png)
 
 
 ## Add new BU File
@@ -29,7 +29,7 @@ fileList.add("XXX");
 2. add the following code at the end of ExcelEditor.java constructor
 
 ```
-lsList.add("UNI CHINA PARTIAL DUCK");
+lsList.add("XXX");
 ```
 
 3. add the following code after (suppose the new BU code is YY)

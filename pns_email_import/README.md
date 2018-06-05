@@ -20,23 +20,24 @@ svn checkout : file://192.168.11.205/f$/UC Development/Program Source/EmailSales
 
 E.g new BU Sales file need to be added ("XXX")
 
+#### EmailAttachmentReceiver.java
+
 1. add the following code at the end of EmailAttachmentReceiver.java constructor
 
-EmailAttachmentReceiver.java
 ```
 fileList.add("XXX");
 ```
 
 2. add the following code at the end of ExcelEditor.java constructor
 
-ExcelEditor.java
 ```
 lsList.add("XXX");
 ```
 
+#### ExcelEditor.java
+
 3. add the following code after categoryMapping (suppose the new BU code is YY)
 
-ExcelEditor.java
 ```
 private ArrayList<SaleData> lsImport(String file){
 	HashMap<String, String> categoryMapping = new HashMap<>();

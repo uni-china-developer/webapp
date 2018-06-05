@@ -46,3 +46,10 @@ ImageRecordApi.java
 ```
 post( "/export" ,           export(), new JsonTransformer()); // export data to purchase interface
 ```
+
+### Database
+
+* [access].[dbo].[image_to_order_data] - import data from PDF
+* [access].[dbo].[image_to_order_bad_image] - temp storage of bad detect images
+* [access].[dbo].[image_to_order_data_update] - used to merge table
+

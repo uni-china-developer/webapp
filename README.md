@@ -1,9 +1,44 @@
 # Webapp (procument finance report portal)
-http://192.168.11.245:8000/
+
 
 ### System Overview
 
 ![System](https://holland.pk/uptow/i4/95a7529aef6fb0cdc752eef4d99865ca.png)
+
+##### Front-End
+
+* [Interface](http://192.168.11.245:8000/)
+* [Cloud Interface](http://web.uni-china.com.hk:8000/)
+* [WC PHP](http://192.168.11.244:8080/)
+
+##### Web Service
+
+WebAPI 
+
+* Main purpose is proxy (Cloud <--VPN--> API <-> DataBase)
+* Email service
+
+SP Update
+
+WC Mysql -> hklerpdb 
+
+```
+exec WellcomeSales.dbo.udsp_replicate_data_mysql
+``` 
+
+YG Mysql -> bildb1
+
+```
+exec YGSale.dbo.update_eodpay -- dayend
+
+exec YGSale.dbo.udsp_ebs_pos_header -- pos transaction header
+
+exec YGSale.dbo.udsp_ebs_pos_detail -- pos transaction detail
+
+exec YGSale.dbo.update_ebs_item_scale -- pos item properties
+
+exec YGSale.dbo.udsp_ebs_cashentries -- pos dayend cash entries
+```
 
 ## Getting Started
 svn checkout : file://192.168.11.205/f$/UC Development/Program Source/WebApp

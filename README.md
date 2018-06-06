@@ -57,7 +57,7 @@ svn checkout : file://192.168.11.205/f$/UC Development/Program Source/WebApp
 
 > Folder structure options and naming conventions for software projects
 
-### Packuage Structure
+### Folder Structure
 
     .
     ├── resources           # project resources
@@ -66,15 +66,9 @@ svn checkout : file://192.168.11.205/f$/UC Development/Program Source/WebApp
     │   └── views           # freemarker template (html)
     ├── src                 # java sources
     └── static              # external folder
-    
-
-### static (Root)
-
-    .
-    ├── download        # temp files for download
-    ├── wcrsa           # wc sales images folder shortcut
-    └── fileUpload      # for upload operation
-
+        ├── download        # temp files for download
+        ├── wcrsa           # wc sales images folder shortcut
+        └── fileUpload      # for upload operation
 
 ## Code Tracing
 

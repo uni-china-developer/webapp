@@ -7,6 +7,15 @@
 ## Getting Started
 svn checkout : file://192.168.11.205/f$/UC Development/Program Source/CloudWeb
 
+> Folder structure options and naming conventions for software projects
+
+static (Root)
+
+.
+├── download		# temp files for download
+└── fileUpload		# for upload operation
+
+
 ### Library
 
 * [WAFFLE](https://github.com/Waffle/waffle) - Windows Authentication Framework

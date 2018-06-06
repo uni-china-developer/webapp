@@ -17,3 +17,7 @@ svn checkout : file://192.168.11.205/f$/UC Development/Program Source/purchase
 * PackPorkCategory - deprecated
 * YGPorkWeight - Pork weight excel (Updated by operation) may conflict with Joe.T Data
 * ProcurementPorkTransaction - Pork Purchase Record (without weight data, for reference only)
+
+## ExcelReader
+
+About PNS (B),  if new shop signed up , new shop info should also be inserted to [procurement].[dbo].[beef_outlet]

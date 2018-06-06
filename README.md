@@ -41,6 +41,16 @@ exec YGSale.dbo.udsp_ebs_cashentries -- pos dayend cash entries
 ## Getting Started
 svn checkout : file://192.168.11.205/f$/UC Development/Program Source/WebApp
 
+> Folder structure options and naming conventions for software projects
+
+static (Root)
+
+.
+├── download		# temp files for download
+├── wcrsa			# wc sales images folder shortcut
+└── fileUpload		# for upload operation
+
+
 ### Library
 * [WAFFLE](https://github.com/Waffle/waffle) - Windows Authentication Framework
 * [GSON](https://github.com/google/gson) - GSON

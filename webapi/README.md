@@ -4,6 +4,21 @@ API for Cloud and webapp
 ## Getting Started
 svn checkout : file://192.168.11.205/f$/UC Development/Program Source/WebApp/WebAPI
 
+> Folder structure options and naming conventions for software projects
+
+static (Root)
+
+.
+├── cp						# cp report folder
+├── download				# temp files for download
+├── processing				# cloud vision images
+├── report					# 
+├── tc						# tc report folder
+├── td 						# td report folder
+└── wc						# wc report folder
+	├── op_am          		# am report folder
+	└── op_record           # record report folder
+
 ### Library
 * [WAFFLE](https://github.com/Waffle/waffle) - Windows Authentication Framework
 * [GSON](https://github.com/google/gson) - GSON

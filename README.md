@@ -41,15 +41,6 @@ exec YGSale.dbo.udsp_ebs_cashentries -- pos dayend cash entries
 ## Getting Started
 svn checkout : file://192.168.11.205/f$/UC Development/Program Source/WebApp
 
-> Folder structure options and naming conventions for software projects
-
-### static (Root)
-
-    .
-    ├── download        # temp files for download
-    ├── wcrsa           # wc sales images folder shortcut
-    └── fileUpload      # for upload operation
-
 
 ### Library
 * [WAFFLE](https://github.com/Waffle/waffle) - Windows Authentication Framework
@@ -64,13 +55,26 @@ svn checkout : file://192.168.11.205/f$/UC Development/Program Source/WebApp
 * [SQLJDBC4] - SQL server connector
 * [xerces](http://xerces.apache.org/) - XML parsers
 
-## Structure
+> Folder structure options and naming conventions for software projects
 
-resources/sql - sql statements
-resources/static - webapp css / js / static contents
-resources/views - FreeMarker Java template
+### Packuage Structure
 
-Java main class - engine.RouteEngine.java - init all api url class
+    .
+    ├── resources           # project resources
+    │   ├── sql             # sql files
+    │   ├── static          # css / js files
+    │   └── views           # freemarker template (html)
+    ├── src                 # java sources
+    └── static              # external folder
+    
+
+### static (Root)
+
+    .
+    ├── download        # temp files for download
+    ├── wcrsa           # wc sales images folder shortcut
+    └── fileUpload      # for upload operation
+
 
 ## Code Tracing
 

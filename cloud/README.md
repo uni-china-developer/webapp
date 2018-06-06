@@ -11,9 +11,9 @@ svn checkout : file://192.168.11.205/f$/UC Development/Program Source/CloudWeb
 
 ### static (Root)
 
-	.
-	├── download		# temp files for download
-	└── fileUpload		# for upload operation
+    .
+    ├── download        # temp files for download
+    └── fileUpload      # for upload operation
 
 
 ### Library

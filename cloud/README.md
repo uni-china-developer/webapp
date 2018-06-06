@@ -128,6 +128,30 @@ Then your item array should be the same like
 ["83586","FG-031-00224","叉燒包","叉燒包 (百佳)","包","PCS","PNS031","第一城","31","2018-06-08PNS03183586",-1.0,-1.0,6.0,-1.0,-1.0,0.0,7.0]
 ```
 
+##### Shop Master
 
+In case of there is a new shop PNS001 line 7 need to be added to system
 
+1. Update / Insert  [baodim_pns_app].[dbo].[shop_master$]
+```
+insert into [baodim_pns_app].[dbo].[shop_master$]
+( [shop_code],[shop_name],[pns_shop_code])
+values ('PNS001', 'Name', '1')
 
+update [baodim_pns_app].[dbo].[shop_master$]
+set [car_line] = 7
+```
+
+2. insert avaliable shop list [baodim_pns_app].[dbo].[shop_list$]
+```
+insert into [baodim_pns_app].[dbo].[shop_list$]
+(pns_shop_code) 
+values (1)
+```
+
+3. insert shop permission to car7
+```
+insert into [baodim_pns_app].[dbo].[baodim_shop_permission]
+([user_name],[shop_code])
+values ('car7', 'PNS001')
+```

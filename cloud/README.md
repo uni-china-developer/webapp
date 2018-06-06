@@ -25,7 +25,7 @@ svn checkout : file://192.168.11.205/f$/UC Development/Program Source/CloudWeb
 * [baodim_pns_app].[dbo].[baodim_item] - Item master
 * [baodim_pns_app].[dbo].[shop_master$] - Shop master
 * [baodim_pns_app].[dbo].[shop_list$] - Available shop lsit
-* [baodim_pns_app].[dbo].[baodim_user_role] - System role
+* [baodim_pns_app].[dbo].[baodim_user_role] - System role, control which user can access '區經' area
 * [baodim_pns_app].[dbo].[baodim_shop_permission] - Shop permission
 * [baodim_pns_app].[dbo].[request_shop_header] - Shop request header
 * [baodim_pns_app].[dbo].[request_shop_detail] - Shop request detail
@@ -132,7 +132,7 @@ Then your item array should be the same like
 
 In case of there is a new shop PNS001 line 7 need to be added to system
 
-1. Update / Insert  [baodim_pns_app].[dbo].[shop_master$]
+1. update / insert  [baodim_pns_app].[dbo].[shop_master$]
 ```
 insert into [baodim_pns_app].[dbo].[shop_master$]
 ( [shop_code],[shop_name],[pns_shop_code])

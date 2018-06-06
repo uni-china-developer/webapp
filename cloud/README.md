@@ -155,3 +155,62 @@ insert into [baodim_pns_app].[dbo].[baodim_shop_permission]
 ([user_name],[shop_code])
 values ('car7', 'PNS001')
 ```
+
+## PNS Kit (MB)
+
+### Database
+
+* [pns_order_app].[dbo].[mbms_item_mapping] - Item master
+* [pns_order_app].[dbo].[mbms_item_stock] - Kit Stock (over all / packs)
+* [pns_order_app].[dbo].[kit_hdr_order] - Order header
+* [procurement].[dbo].[PnsOrderFromExcel] - Request Order
+* [procurement].[dbo].[PnsOrderReceive] - Receive Order
+
+### Uses Case
+
+![kitusecase](https://holland.pk/uptow/i4/3aadaca62fac7be4b06a3e4c4c6d8a5e.png)
+
+### SP
+
+* pns_order_app.dbo.udsp_cal_mbms_export - stock out (to shop)
+* pns_order_app.dbo.udsp_cal_mbms_purchase - stock in (purchase)
+* pns_order_app.dbo.udsp_cal_mbms_stock - will be executed after _export or _purchase is done 
+
+### Code
+
+API URL : /kit/api
+
+#### PnsKitAPIController
+
+##### Get
+
+Purchase
+```
+get ("/:bu/purchase", getPurchase());
+
+...
+
+String bu = request.params("bu");
+String date = request.queryParams("date");
+```
+
+Receive
+```
+get ("/:bu/receive", getReceive());
+
+...
+
+String bu = request.params("bu");
+String date = request.queryParams("date");
+```
+##### Post
+
+Request JSON 
+```
+{
+	date : "",
+	status : "",
+	editUser : "",
+	item : [{}]
+}
+```

@@ -159,6 +159,28 @@ Query Parameter : loadDate
 get ("/app/dept/procurement/record/csv", getRecordCSV(), new JsonTransformer());
 ```
 
+### Add new shop for input
+
+E.G. Company (金年升) new local pork(D) market(M) shop info : A0000 (FP000)
+
+1. update data to [inventory_app].[dbo].[location_type]
+```
+insert into [inventory_app].[dbo].[location_type]
+([entry_no]
+  ,[location_code]
+  ,[type_code]
+  ,[mode])
+values ('A0000D','A0000','D','M')
+```
+
+2. update data to [procurement].[dbo].[shop_fp]
+```
+insert into [procurement].[dbo].[shop_fp]
+([shop_code],[company],[fp_code],[company_code])
+values('A0000','金年升','FP000','yg')
+```
+
+
 ## Procurement 超市屠宰數輸入
 
 JS Library - datatable, jquery, bootstrap

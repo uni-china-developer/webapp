@@ -45,3 +45,47 @@ private ArrayList<SaleData> lsImport(String file){
 	categoryMapping.put("XXX", "YY");
 	...
 ```
+
+## Note
+
+Some kind of item will represent individual BU
+
+56344 -> PF
+
+86867 -> PH
+
+73126 / 73124 -> MF
+
+Code in ExcelEditor.java
+```
+case "D" :{
+    if(itemCode.equals("56344")){
+        saleDataTw.setItemCategory("PF");
+        saleDataTw.setSaleCategory("D");
+    }
+    else{
+        saleDataTw.setSaleCategory(category);
+    }
+    break;
+}
+case "C":{
+    if(itemCode.equals("86867")){
+        saleDataTw.setItemCategory("PH");
+        saleDataTw.setSaleCategory("C");
+    }
+    else{
+        saleDataTw.setSaleCategory(category);
+    }
+    break;
+}
+case "F" : {
+    if(itemCode.equals("73126") || itemCode.equals("73124")){
+        saleDataTw.setItemCategory("MF");
+        saleDataTw.setSaleCategory("MF");
+    }
+    else{
+        saleDataTw.setSaleCategory("F");
+    }
+    break;
+}
+```

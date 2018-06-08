@@ -4,6 +4,12 @@ API for Cloud and webapp
 ## Getting Started
 svn checkout : file://192.168.11.205/f$/UC Development/Program Source/WebApp/WebAPI
 
+Production path : \\192.168.11.245\Java\project\WebAPI
+
+Service Name : WebAPI
+
+Default port : 8080
+
 > Folder structure options and naming conventions for software projects
 
 ### static (Root)

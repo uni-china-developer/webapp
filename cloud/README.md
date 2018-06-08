@@ -7,6 +7,10 @@
 ## Getting Started
 svn checkout : file://192.168.11.205/f$/UC Development/Program Source/CloudWeb
 
+Production path : /opt/java
+
+Default port : 8000
+
 > Folder structure options and naming conventions for software projects
 
 ### static (Root)

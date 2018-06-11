@@ -4,6 +4,14 @@
 
 ![System](https://holland.pk/uptow/i4/cc6597522d296ba954f96c3c6a43bad6.png)
 
+This document include : 
+
+* [Pns Kit](#pns-kit-mb)
+* [Baodim](#baodim)
+* [WC](#wc)
+* [PNS](#pns-豬)
+* [WC Upload image service](#wc-upload-image-service)
+
 ### Architecture
 
 ![architecture](https://holland.pk/uptow/i4/4ea7c0692c9dbd6b90e005b7d2b09444.png)
@@ -424,3 +432,15 @@ Email setting table
 ```
 [pns_order_app].[dbo].[app_mail_setting_prod]
 ```
+
+## WC Upload image service
+
+![wcuploadf](https://holland.pk/uptow/i4/7ef18896f4965ed99adad2963544e450.png)
+
+### Important note
+
+1. Images uploaded on this server will keep 15 days only
+2. Images uploaded on this server will be copied to our public drive by program
+3. Image Copy program start every hour between 9:00 AM and 12:00 AM by task scheduler
+4. There is a delay (worst case is 59 minutes) between cloud server and our server on syncing images
+5. Task scheduler setup on 245 server

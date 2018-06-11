@@ -5,6 +5,20 @@
 
 ![System](https://holland.pk/uptow/i4/95a7529aef6fb0cdc752eef4d99865ca.png)
 
+#### Replication SQL Server
+
+it_services - Occurs every day at 12:05:00 AM
+
+pns_replication - Occurs every day at 9:00:00 AM and 11:00:00 AM
+
+yg_replication - Occurs every 30 minutes between 7:45:00 AM and 8:45:00 AM, every day at 1:50:00 PM
+
+yg_slim_replication - Occurs every day 1 hour between 12:00:00 AM and 11:59:59 PM
+
+#### Important Note
+
+Data would not be able to access by any application until the replcation is completed
+
 ##### Front-End
 
 * [Interface](http://192.168.11.245:8000/)

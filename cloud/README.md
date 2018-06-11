@@ -4,6 +4,10 @@
 
 ![System](https://holland.pk/uptow/i4/cc6597522d296ba954f96c3c6a43bad6.png)
 
+### Architecture
+
+![architecture](https://holland.pk/uptow/i4/4ea7c0692c9dbd6b90e005b7d2b09444.png)
+
 ## Getting Started
 svn checkout : file://192.168.11.205/f$/UC Development/Program Source/CloudWeb
 
@@ -272,4 +276,87 @@ ui -> bu code : D & BD
 [pns_order_app].[dbo].[favourite_detail] - Template detail
 ```
 
+## PNS (Topseal雞)
+
+### Uses Case
+
+![topealchi](https://holland.pk/uptow/i4/a592e11fc8c5c1896744d07638f2ce95.png)
+
+### AM
+
+![topsealchiam](https://holland.pk/uptow/i4/2df0fff02d89ab4416550539d2377e9b.png)
+
+### Ching
+
+![topsealchiching](https://holland.pk/uptow/i4/9dd7ed07543820af05d5bbb45f6cbce4.png)
+
+* day + 2 改貨
+ 
+![topsealchiching2](https://holland.pk/uptow/i4/80c165d721e4266e1765ac95c62b0a1b.png)
+
+* day + 1 分貨
+
+#### Note
+
+1. 預貨通知 - email to 正大下一個星期的預貨數
+2. day + 1 & Firday 發貨通知 - email to 宏輝發貨通知
+3. day + 2 審批 - email to 正大兩日前改數
+4. 公眾假期需要人手 generate 發貨通知 ([link](http://hklerpdb1/ReportServer/Pages/ReportViewer.aspx?%2fTopseal+Order%2fTC+Delivery+report&rs:Command=Render))
+
+#### Database
+
+Order status
+```
+SELECT [order_no],[order_status]
+  FROM [pns_order_app].[dbo].[hdr_order]
+  where bu_code = 'TC'
+```
+
+Auto create order sp
+```
+exec pns_order_app.dbo.udsp_auto_create_tc_order
+```
+
+Order item
+```
+SELECT [uc_code]
+      ,[bu_code]
+      ,[seq]
+      ,[short_name]
+      ,[report_name]
+      ,[no_of_pack]
+      ,[price]
+  FROM [pns_order_app].[dbo].[app_order_item]
+  where bu_code = 'TC'
+```
+
+Email setting table
+```
+[pns_order_app].[dbo].[app_mail_setting_prod]
+```  
+
+Stock state
+```
+SELECT [state_code]
+      ,[bu_code]
+      ,[state_description]
+      ,[seq]
+      ,[usage]
+  FROM [pns_order_app].[dbo].[st_state]
+  where bu_code = 'TC'
+```
+
+Stock enties
+```
+SELECT [entry_no]
+      ,[st_date]
+      ,[shop_code]
+      ,[bu_code]
+      ,[st_state]
+      ,[qty]
+      ,[updated_user]
+      ,[updated_time]
+  FROM [pns_order_app].[dbo].[st_stock_enties]
+  where bu_code = 'TC'
+```
 

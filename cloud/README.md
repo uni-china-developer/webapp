@@ -288,13 +288,13 @@ ui -> bu code : D & BD
 
 ### Ching
 
+* day + 2 改貨
 ![topsealchiching](https://holland.pk/uptow/i4/9dd7ed07543820af05d5bbb45f6cbce4.png)
 
-* day + 2 改貨
- 
+
+* day + 1 發貨
 ![topsealchiching2](https://holland.pk/uptow/i4/80c165d721e4266e1765ac95c62b0a1b.png)
 
-* day + 1 分貨
 
 #### Note
 
@@ -360,3 +360,67 @@ SELECT [entry_no]
   where bu_code = 'TC'
 ```
 
+## PNS (Topseal鴨)
+
+### Uses Case
+
+![topealchi](https://holland.pk/uptow/i4/a592e11fc8c5c1896744d07638f2ce95.png)
+
+### AM Stocktake
+
+![duckstockam](https://holland.pk/uptow/i4/9a48981d15cdc5a86137f1f395319d8c.png)
+
+### Ching interface
+
+![chingduck](https://holland.pk/uptow/i4/acd33551e7b95fc125d7de3f5a2d1dd7.png)
+
+### Ching 預貨
+
+![chingpreduck](https://holland.pk/uptow/i4/ab2c43237a944208bbfad5876a3baf41.png)
+
+### Operation 收貨
+
+![receiveduck](https://holland.pk/uptow/i4/3b931166bca94ccab3eaec63e12349da.png)
+
+#### Note
+
+1. 預貨通知 - email to 正大下一個星期的預貨數
+2. 發貨通知 - email to 宏輝發貨通知
+
+#### Database
+
+Stock
+```
+[pns_order_app].[dbo].[td_item_stock_detail]
+
+[pns_order_app].[dbo].[td_item_stock_header]
+```
+
+Preset order
+```
+[pns_order_app].[dbo].[td_pre_header]
+
+[pns_order_app].[dbo].[td_pre_total]
+```
+
+Request order
+```
+[pns_order_app].[dbo].[td_request_shop_detail]
+
+[pns_order_app].[dbo].[td_request_shop_header]
+```
+
+Summary header
+```
+[pns_order_app].[dbo].[td_request_summary_header]
+```
+
+Stock item info
+```
+[pns_order_app].[dbo].[td_st_item]
+```
+
+Email setting table
+```
+[pns_order_app].[dbo].[app_mail_setting_prod]
+```

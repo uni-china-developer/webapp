@@ -227,3 +227,49 @@ Request JSON
 	item : [{}]
 }
 ```
+
+## PNS (豬)
+
+### Uses Case
+
+![porkorder](https://holland.pk/uptow/i4/f1800d8763734d8c9aaf6e83572e7bc3.png)
+
+### AM 落豬
+
+![ampork](https://holland.pk/uptow/i4/bbd2e1b78c267747a963e791fbe99e50.png)
+
+### shan 落豬 (background change to yellow after cutoff time)
+
+![shanm](https://holland.pk/uptow/i4/512ac1a6be064a7965a3ae9b341c35bb.png)
+
+* cutoff time 
+
+![ordertask](https://holland.pk/uptow/i4/4264c335a4e923d71c8fcb319943c44e.png)
+
+ue -> bu code : C
+ui -> bu code : D & BD 
+
+#### Shop Permission
+
+* 功能表 > 設定 > 選擇BU > 帳號設定 > 搜尋 login name
+
+![permission](https://holland.pk/uptow/i4/140c53142590529db4d47dc568434388.png)
+
+* 分店權限(BU) > 新增
+
+### Order template
+
+#### Setting
+
+* 功能表 > 設定 > 選擇BU > 範本設定
+
+![porktemplate](https://holland.pk/uptow/i4/0abf12c8ae6bfda85241147a326d055b.png)
+
+* Database
+```
+[pns_order_app].[dbo].[favourite_header] - Template header
+
+[pns_order_app].[dbo].[favourite_detail] - Template detail
+```
+
+

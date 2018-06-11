@@ -345,17 +345,11 @@ Parameter : company
 get("/app/dept/finance/sale/get/export/:company", getExport(), new JsonTransformer());
 ```
 
-### MYOB 億高 (上載圖片)
+### FileCopy
 
 FileCopy source : file://192.168.11.205/f$/UC Development/Program Source/FileCopy
 
-Upload URL : [live](http://web.uni-china.com.hk:8000/app/dept/uploadpage/main?user=L999)
-
-Since WC users will use this service to upload images to server
-
 FileCopy objective is copy images from Cloud Server to our public drive so that office staff can review the images
-
-Intratnet URL : [live](http://192.168.11.245:8000/app/dept/finance/wellother)
 
 ### Database Table 
 

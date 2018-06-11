@@ -8,7 +8,7 @@ This document include :
 
 * [Pns Kit](#pns-kit-mb)
 * [Baodim](#baodim)
-* [WC](#wc)
+* [WC](https://github.com/uni-china-developer/webapp#database-table-3)
 * [PNS](#pns-豬)
 * [WC Upload image service](#wc-upload-image-service)
 

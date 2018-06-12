@@ -74,3 +74,21 @@ post( "/export" ,           export(), new JsonTransformer()); // export data to 
 * [access].[dbo].[image_to_order_bad_image] - temp storage of bad detect images
 * [access].[dbo].[image_to_order_data_update] - used to merge table
 
+## ScheduleManager
+
+Report auto mail scheduler
+
+Time table 
+```
+SELECT [email_id]
+      ,[mail_subject]
+      ,[mail_content]
+      ,[runtime_hour]
+      ,[runtime_minute]
+      ,[folder_name]
+  FROM [WellcomeSales].[dbo].[report_schedule]
+```
+![schedule](https://holland.pk/uptow/i4/403d6ed62b7a8b7cde08a0e745a8f7cb.png)
+
+Output
+![result](https://holland.pk/uptow/i4/cec35495af4dc793569e2cf660064f45.png)

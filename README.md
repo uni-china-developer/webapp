@@ -462,8 +462,52 @@ exec [finance].[dbo].[auto_sync_sys_ygsales]
 * [procurement].[dbo].[shop_fp] - Location FP Code mapping table
 * [inventory_app].[dbo].[location_type] - Shop Code menu & default BU
 
+## PNS 員工獎勵金
 
+URL : [link](http://192.168.11.245:8000/app/dept/pns/page/main)
 
+### JAVA
+
+PNSPageController.java
+
+#### METHOD
+
+```
+get ("/export/target/bu/:bu/year/:year/week/:from/to/:to", getExportExcel(), new JsonTransformer());
+get ("/export/bonus/bu/:bu/year/:year/week/:from/to/:to", getBonusExcel(), new JsonTransformer());
+
+get ("/export/groupedbonus/bu/:bu/year/:year/week/:from/to/:to", getGroupedBonusExcel(), new JsonTransformer());
+
+post("/import", importData(), new JsonTransformer());
+
+get ("/page/:page", getPage());
+```
+
+### Database
+
+```
+[operation].[dbo].[pns_c_promotion] - shop rpomotion setting
+
+[operation].[dbo].[pns_c_promotion_default] - default promotion setting
+
+[operation].[dbo].[pns_sales_bonus] - bonus result 
+
+[operation].[dbo].[pns_target_adjustment] - pns target table
+
+[operation].[dbo].[pns_tc_item_group] - TC item group
+
+[operation].[dbo].[pns_tc_promotion_default] - TC target GP
+
+[operation].[dbo].[pns_tc_shop_outlet] - TC shop outlet
+```
+
+### SP
+
+```
+[operation].[dbo].[udsp_pns_update_bonus] - update c bonus result
+
+[operation].[dbo].[udsp_pns_update_tc_bonus] - update tc bonus result
+```
 
 
 

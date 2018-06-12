@@ -91,4 +91,5 @@ SELECT [email_id]
 ![schedule](https://holland.pk/uptow/i4/403d6ed62b7a8b7cde08a0e745a8f7cb.png)
 
 Output
+
 ![result](https://holland.pk/uptow/i4/cec35495af4dc793569e2cf660064f45.png)

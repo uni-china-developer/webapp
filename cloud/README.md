@@ -105,11 +105,11 @@ String date = request.queryParams("date");
 Request JSON 
 ```
 {
-	rqdate : "",
-	shopcode : "",
-	editor : "",
-	status : "",
-	item : []
+  rqdate : "",
+  shopcode : "",
+  editor : "",
+  status : "",
+  item : []
 }
 ```
 
@@ -120,7 +120,7 @@ post("/request", sendRequest());
 
 Item Array base on the receive format. 
 
-In case of the request URL is 
+In case of the request is 
 ```
 /baodim/api/request?date=2018-06-08&shop=PNS031
 ```
@@ -148,14 +148,14 @@ The response json is
 ...
 ```
 
-Then your item array should be the same like
+item array should be
 ```
 ["83586","FG-031-00224","叉燒包","叉燒包 (百佳)","包","PCS","PNS031","第一城","31","2018-06-08PNS03183586",-1.0,-1.0,6.0,-1.0,-1.0,0.0,7.0]
 ```
 
 ##### Shop Master
 
-In case of there is a new shop PNS001 line 7 need to be added to system
+In case of a new shop PNS001 line 7 need to be added to system
 
 1. update / insert  [baodim_pns_app].[dbo].[shop_master$]
 ```
@@ -233,10 +233,10 @@ String date = request.queryParams("date");
 Request JSON 
 ```
 {
-	date : "",
-	status : "",
-	editUser : "",
-	item : [{}]
+  date : "",
+  status : "",
+  editUser : "",
+  item : [{}]
 }
 ```
 

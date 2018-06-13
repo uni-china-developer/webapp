@@ -76,7 +76,7 @@ post( "/export" ,           export(), new JsonTransformer()); // export data to 
 
 ### Flow
 
-![cloudvision](https://holland.pk/uptow/i4/1d58bcf4076c234bbed97973a51f7c6d.png)
+![cloudvision](https://holland.pk/uptow/i4/df109dbb6a92307bd435fa2f0bf36501.png)
 
 ### Cloud vision API
 

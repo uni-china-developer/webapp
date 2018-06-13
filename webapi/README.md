@@ -50,7 +50,7 @@ Header : \\192.168.11.244\wamp64\www\css3.php
 
 CSS & JS : \\192.168.11.244\wamp64\www\static
 
-### Use Cases
+### Method
 
 * 匯入電郵PDF 
 
@@ -73,6 +73,14 @@ post( "/export" ,           export(), new JsonTransformer()); // export data to 
 * [access].[dbo].[image_to_order_data] - import data from PDF
 * [access].[dbo].[image_to_order_bad_image] - temp storage of bad detect images
 * [access].[dbo].[image_to_order_data_update] - used to merge table
+
+### Flow
+
+![cloudvision](https://holland.pk/uptow/i4/1d58bcf4076c234bbed97973a51f7c6d.png)
+
+### Cloud vision API
+
+[view documentation from google](https://cloud.google.com/vision/docs/libraries#client-libraries-install-java)
 
 ## ScheduleManager
 
